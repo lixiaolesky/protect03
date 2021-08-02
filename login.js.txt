@@ -1,0 +1,33 @@
+INSERT INTO zdt_ele_bm_2101 (
+ POINTID,
+ DATATIME,
+ DIRECTION,
+ Z_BM,
+ J_BM,
+ F_BM,
+ P_BM,
+ G_BM
+ 
+)
+
+
+
+
+SELECT
+ b.POINTID,
+ '2021-01-22 00:00:00',
+ '1',
+ '0',
+ '0',
+ '0',
+ '0',
+ '0'
+FROM
+ pob_community_building a,
+ pob_meter b,
+ pob_meter_estate c
+WHERE
+ a.AREA_ID = c.AREA_ID
+AND b.POINTID = c.POINT_ID
+AND b.DISC =''
+AND a.RELATION LIKE '01003008%'
